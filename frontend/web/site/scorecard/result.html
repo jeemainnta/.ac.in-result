@@ -1,1 +1,670 @@
+<html lang="en-US" class="h-100"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="https://jeemain.nta.ac.in/frontend/web/images/nta-logo.png">
+        <title>Joint Entrance Examination (Main) | India</title>
+    <meta name="csrf-param" content="_csrf-frontend">
+<meta name="csrf-token" content="VTofB2-gXo16j1DQvYdFheKA4VUJpUMnNhOnHx1cOGYgTnhzPc8L3DXNFpzcwBq0ms6VOjroOkpxRe9vV2gKLA==">
 
+<link href="https://jeemain.ntaonline.in/frontend/web/assets/fe12e95d/dist/css/bootstrap.css" rel="stylesheet">
+<link href="https://jeemain.ntaonline.in/frontend/web/css/demo.css" rel="stylesheet">
+<link href="https://jeemain.ntaonline.in/frontend/web/css/smart_wizard_all.css" rel="stylesheet">
+<link href="https://jeemain.ntaonline.in/frontend/web/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://jeemain.ntaonline.in/frontend/web/lib/bootstrap/css/bootstrap-grid.min.css" rel="stylesheet">
+<link href="https://jeemain.ntaonline.in/frontend/web/lib/bootstrap/css/bootstrap-reboot.min.css" rel="stylesheet">
+<link href="https://jeemain.ntaonline.in/frontend/web/lib/bootstrap/css/bootstrap-utilities.min.css" rel="stylesheet">
+<link href="https://jeemain.ntaonline.in/frontend/web/lib/remixicon/fonts/remixicon.css" rel="stylesheet">
+<link href="https://jeemain.ntaonline.in/frontend/web/css/style.min.css" rel="stylesheet">
+<link href="https://jeemain.ntaonline.in/frontend/web/css/responsive.css" rel="stylesheet">
+<link href="https://jeemain.ntaonline.infrontend/web/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+<link href="https://jeemain.ntaonline.in/frontend/web/plugins/datatables-responsive/css/responsive.bootstrap4.min.css" rel="stylesheet">
+<link href="https://jeemain.ntaonline.in/frontend/web/plugins/datatables-buttons/css/buttons.bootstrap4.min.css" rel="stylesheet">
+<link href="https://jeemain.ntaonline.in/frontend/web/css/comman.css" rel="stylesheet">
+<link href="https://jeemain.ntaonline.in/frontend/web/css/jquery.multiselect.css" rel="stylesheet">
+<link href="https://jeemain.ntaonline.in/frontend/web/css/sweetalert.min.css" rel="stylesheet">    <style>
+        .loader {
+            background: rgb(255 255 255 / 80%) url(https://jeemain.ntaonline.in/frontend/web/loader2.gif);
+            background-position: center;
+            background-size: 5%;
+            background-repeat: no-repeat;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .activeR {
+            color: green !important;
+            font-weight: bold;
+        }
+
+
+
+        #mynavbar .navbar-nav .nav-link {
+            font-size: 15px;
+            color: rgb(255 255 255);
+            padding-right: 0.9rem;
+            padding-left: 0.9rem;
+            font-weight: 500;
+        }
+
+        .nav-link1 {
+            font-weight: 400;
+            letter-spacing: -.1px;
+            height: 40px;
+            padding: 0 10px;
+            display: flex;
+            align-items: center;
+            border-radius: 5px;
+            white-space: nowrap;
+            margin-top: 2px;
+            color: #262626;
+            border-bottom: dotted 1px #a1b1cb;
+        }
+
+        .nav-link1 svg {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            stroke-width: 1.5px
+        }
+
+        .nav-link1:hover,
+        .nav-link1:focus {
+            background-color: rgb(235 138 43);
+            color: #ffffff;
+        }
+
+        .nav-link1 span {
+            transition: all .3s
+        }
+
+        .ugc-board {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .header-main {
+            margin-right: 0px !important;
+            margin-left: 0px !important;
+        }
+
+        .footer {
+            margin-right: 0px !important;
+            margin-left: 0px !important;
+        }
+
+        .skin-dark .sub-link1 {
+            font-family: 'Roboto', sans-serif !important;
+            font-size: 14px !important;
+        }
+
+        .ri-user-line,
+        .ri-phone-line,
+        .ri-bank-card-line,
+        .ri-award-line,
+        .ri-medal-2-line,
+        .ri-gallery-upload-line,
+        .ri-checkbox-circle-line {
+            margin-right: 4px !important;
+        }
+
+        .col-form-label {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px !important;
+        }
+
+        .card {
+            background-color: #fbfcfd;
+            border: none;
+        }
+
+        .navbar-nav {
+            margin-left: -10px;
+        }
+
+        .blink_me {
+            animation: blinker 4s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* label{font-weight:bold} */
+        .dropdown:hover>.dropdown-menu {
+            display: block;
+        }
+
+        .dropdown>.dropdown-toggle:active {
+            /*Without this, clicking will make it sticky*/
+            pointer-events: none;
+        }
+    </style>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>.swal2-popup.swal2-toast{flex-direction:row;align-items:center;width:auto;padding:.625em;overflow-y:hidden;background:#fff;box-shadow:0 0 .625em #d9d9d9}.swal2-popup.swal2-toast .swal2-header{flex-direction:row;padding:0}.swal2-popup.swal2-toast .swal2-title{flex-grow:1;justify-content:flex-start;margin:0 .6em;font-size:1em}.swal2-popup.swal2-toast .swal2-footer{margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-popup.swal2-toast .swal2-close{position:static;width:.8em;height:.8em;line-height:.8}.swal2-popup.swal2-toast .swal2-content{justify-content:flex-start;padding:0;font-size:1em}.swal2-popup.swal2-toast .swal2-icon{width:2em;min-width:2em;height:2em;margin:0}.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:1.8em;font-weight:700}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content{font-size:.25em}}.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-popup.swal2-toast .swal2-actions{flex-basis:auto!important;width:auto;height:auto;margin:0 .3125em;padding:0}.swal2-popup.swal2-toast .swal2-styled{margin:.125em .3125em;padding:.3125em .625em;font-size:1em}.swal2-popup.swal2-toast .swal2-styled:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(100,150,200,.5)}.swal2-popup.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:1.6em;height:3em;transform:rotate(45deg);border-radius:50%}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.8em;left:-.5em;transform:rotate(-45deg);transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.25em;left:.9375em;transform-origin:0 1.5em;border-radius:0 4em 4em 0}.swal2-popup.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip{-webkit-animation:swal2-toast-animate-success-line-tip .75s;animation:swal2-toast-animate-success-line-tip .75s}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long{-webkit-animation:swal2-toast-animate-success-line-long .75s;animation:swal2-toast-animate-success-line-long .75s}.swal2-popup.swal2-toast.swal2-show{-webkit-animation:swal2-toast-show .5s;animation:swal2-toast-show .5s}.swal2-popup.swal2-toast.swal2-hide{-webkit-animation:swal2-toast-hide .1s forwards;animation:swal2-toast-hide .1s forwards}.swal2-container{display:flex;position:fixed;z-index:1060;top:0;right:0;bottom:0;left:0;flex-direction:row;align-items:center;justify-content:center;padding:.625em;overflow-x:hidden;transition:background-color .1s;-webkit-overflow-scrolling:touch}.swal2-container.swal2-backdrop-show,.swal2-container.swal2-noanimation{background:rgba(0,0,0,.4)}.swal2-container.swal2-backdrop-hide{background:0 0!important}.swal2-container.swal2-top{align-items:flex-start}.swal2-container.swal2-top-left,.swal2-container.swal2-top-start{align-items:flex-start;justify-content:flex-start}.swal2-container.swal2-top-end,.swal2-container.swal2-top-right{align-items:flex-start;justify-content:flex-end}.swal2-container.swal2-center{align-items:center}.swal2-container.swal2-center-left,.swal2-container.swal2-center-start{align-items:center;justify-content:flex-start}.swal2-container.swal2-center-end,.swal2-container.swal2-center-right{align-items:center;justify-content:flex-end}.swal2-container.swal2-bottom{align-items:flex-end}.swal2-container.swal2-bottom-left,.swal2-container.swal2-bottom-start{align-items:flex-end;justify-content:flex-start}.swal2-container.swal2-bottom-end,.swal2-container.swal2-bottom-right{align-items:flex-end;justify-content:flex-end}.swal2-container.swal2-bottom-end>:first-child,.swal2-container.swal2-bottom-left>:first-child,.swal2-container.swal2-bottom-right>:first-child,.swal2-container.swal2-bottom-start>:first-child,.swal2-container.swal2-bottom>:first-child{margin-top:auto}.swal2-container.swal2-grow-fullscreen>.swal2-modal{display:flex!important;flex:1;align-self:stretch;justify-content:center}.swal2-container.swal2-grow-row>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container.swal2-grow-column{flex:1;flex-direction:column}.swal2-container.swal2-grow-column.swal2-bottom,.swal2-container.swal2-grow-column.swal2-center,.swal2-container.swal2-grow-column.swal2-top{align-items:center}.swal2-container.swal2-grow-column.swal2-bottom-left,.swal2-container.swal2-grow-column.swal2-bottom-start,.swal2-container.swal2-grow-column.swal2-center-left,.swal2-container.swal2-grow-column.swal2-center-start,.swal2-container.swal2-grow-column.swal2-top-left,.swal2-container.swal2-grow-column.swal2-top-start{align-items:flex-start}.swal2-container.swal2-grow-column.swal2-bottom-end,.swal2-container.swal2-grow-column.swal2-bottom-right,.swal2-container.swal2-grow-column.swal2-center-end,.swal2-container.swal2-grow-column.swal2-center-right,.swal2-container.swal2-grow-column.swal2-top-end,.swal2-container.swal2-grow-column.swal2-top-right{align-items:flex-end}.swal2-container.swal2-grow-column>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container.swal2-no-transition{transition:none!important}.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen)>.swal2-modal{margin:auto}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-container .swal2-modal{margin:0!important}}.swal2-popup{display:none;position:relative;box-sizing:border-box;flex-direction:column;justify-content:center;width:32em;max-width:100%;padding:1.25em;border:none;border-radius:5px;background:#fff;font-family:inherit;font-size:1rem}.swal2-popup:focus{outline:0}.swal2-popup.swal2-loading{overflow-y:hidden}.swal2-header{display:flex;flex-direction:column;align-items:center;padding:0 1.8em}.swal2-title{position:relative;max-width:100%;margin:0 0 .4em;padding:0;color:#595959;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;word-wrap:break-word}.swal2-actions{display:flex;z-index:1;box-sizing:border-box;flex-wrap:wrap;align-items:center;justify-content:center;width:100%;margin:1.25em auto 0;padding:0 1.6em}.swal2-actions:not(.swal2-loading) .swal2-styled[disabled]{opacity:.4}.swal2-actions:not(.swal2-loading) .swal2-styled:hover{background-image:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1))}.swal2-actions:not(.swal2-loading) .swal2-styled:active{background-image:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2))}.swal2-loader{display:none;align-items:center;justify-content:center;width:2.2em;height:2.2em;margin:0 1.875em;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border-width:.25em;border-style:solid;border-radius:100%;border-color:#2778c4 transparent #2778c4 transparent}.swal2-styled{margin:.3125em;padding:.625em 1.1em;box-shadow:none;font-weight:500}.swal2-styled:not([disabled]){cursor:pointer}.swal2-styled.swal2-confirm{border:0;border-radius:.25em;background:initial;background-color:#2778c4;color:#fff;font-size:1.0625em}.swal2-styled.swal2-deny{border:0;border-radius:.25em;background:initial;background-color:#d14529;color:#fff;font-size:1.0625em}.swal2-styled.swal2-cancel{border:0;border-radius:.25em;background:initial;background-color:#757575;color:#fff;font-size:1.0625em}.swal2-styled:focus{outline:0;box-shadow:0 0 0 3px rgba(100,150,200,.5)}.swal2-styled::-moz-focus-inner{border:0}.swal2-footer{justify-content:center;margin:1.25em 0 0;padding:1em 0 0;border-top:1px solid #eee;color:#545454;font-size:1em}.swal2-timer-progress-bar-container{position:absolute;right:0;bottom:0;left:0;height:.25em;overflow:hidden;border-bottom-right-radius:5px;border-bottom-left-radius:5px}.swal2-timer-progress-bar{width:100%;height:.25em;background:rgba(0,0,0,.2)}.swal2-image{max-width:100%;margin:1.25em auto}.swal2-close{position:absolute;z-index:2;top:0;right:0;align-items:center;justify-content:center;width:1.2em;height:1.2em;padding:0;overflow:hidden;transition:color .1s ease-out;border:none;border-radius:5px;background:0 0;color:#ccc;font-family:serif;font-size:2.5em;line-height:1.2;cursor:pointer}.swal2-close:hover{transform:none;background:0 0;color:#f27474}.swal2-close:focus{outline:0;box-shadow:inset 0 0 0 3px rgba(100,150,200,.5)}.swal2-close::-moz-focus-inner{border:0}.swal2-content{z-index:1;justify-content:center;margin:0;padding:0 1.6em;color:#545454;font-size:1.125em;font-weight:400;line-height:normal;text-align:center;word-wrap:break-word}.swal2-checkbox,.swal2-file,.swal2-input,.swal2-radio,.swal2-select,.swal2-textarea{margin:1em auto}.swal2-file,.swal2-input,.swal2-textarea{box-sizing:border-box;width:100%;
+transition:border-color .3s,box-shadow .3s;border:1px solid #d9d9d9;border-radius:.1875em;background:inherit;box-shadow:inset 0 1px 1px rgba(0,0,0,.06);color:inherit;font-size:1.125em}.swal2-file.swal2-inputerror,.swal2-input.swal2-inputerror,.swal2-textarea.swal2-inputerror{border-color:#f27474!important;box-shadow:0 0 2px #f27474!important}.swal2-file:focus,.swal2-input:focus,.swal2-textarea:focus{border:1px solid #b4dbed;outline:0;box-shadow:0 0 0 3px rgba(100,150,200,.5)}.swal2-file::-moz-placeholder,.swal2-input::-moz-placeholder,.swal2-textarea::-moz-placeholder{color:#ccc}.swal2-file:-ms-input-placeholder,.swal2-input:-ms-input-placeholder,.swal2-textarea:-ms-input-placeholder{color:#ccc}.swal2-file::placeholder,.swal2-input::placeholder,.swal2-textarea::placeholder{color:#ccc}.swal2-range{margin:1em auto;background:#fff}.swal2-range input{width:80%}.swal2-range output{width:20%;color:inherit;font-weight:600;text-align:center}.swal2-range input,.swal2-range output{height:2.625em;padding:0;font-size:1.125em;line-height:2.625em}.swal2-input{height:2.625em;padding:0 .75em}.swal2-input[type=number]{max-width:10em}.swal2-file{background:inherit;font-size:1.125em}.swal2-textarea{height:6.75em;padding:.75em}.swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;background:inherit;color:inherit;font-size:1.125em}.swal2-checkbox,.swal2-radio{align-items:center;justify-content:center;background:#fff;color:inherit}.swal2-checkbox label,.swal2-radio label{margin:0 .6em;font-size:1.125em}.swal2-checkbox input,.swal2-radio input{margin:0 .4em}.swal2-input-label{display:flex;justify-content:center;margin:1em auto}.swal2-validation-message{align-items:center;justify-content:center;margin:0 -2.7em;padding:.625em;overflow:hidden;background:#f0f0f0;color:#666;font-size:1em;font-weight:300}.swal2-validation-message::before{content:"!";display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center}.swal2-icon{position:relative;box-sizing:content-box;justify-content:center;width:5em;height:5em;margin:1.25em auto 1.875em;border:.25em solid transparent;border-radius:50%;border-color:#000;font-family:inherit;line-height:5em;cursor:default;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:3.75em}.swal2-icon.swal2-error{border-color:#f27474;color:#f27474}.swal2-icon.swal2-error .swal2-x-mark{position:relative;flex-grow:1}.swal2-icon.swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;transform:rotate(45deg)}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;transform:rotate(-45deg)}.swal2-icon.swal2-error.swal2-icon-show{-webkit-animation:swal2-animate-error-icon .5s;animation:swal2-animate-error-icon .5s}.swal2-icon.swal2-error.swal2-icon-show .swal2-x-mark{-webkit-animation:swal2-animate-error-x-mark .5s;animation:swal2-animate-error-x-mark .5s}.swal2-icon.swal2-warning{border-color:#facea8;color:#f8bb86}.swal2-icon.swal2-info{border-color:#9de0f6;color:#3fc3ee}.swal2-icon.swal2-question{border-color:#c9dae1;color:#87adbd}.swal2-icon.swal2-success{border-color:#a5dc86;color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;transform:rotate(45deg);border-radius:50%}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.4375em;left:-2.0635em;transform:rotate(-45deg);transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.6875em;left:1.875em;transform:rotate(-45deg);transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}.swal2-icon.swal2-success .swal2-success-ring{position:absolute;z-index:2;top:-.25em;left:-.25em;box-sizing:content-box;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%}.swal2-icon.swal2-success .swal2-success-fix{position:absolute;z-index:1;top:.5em;left:1.625em;width:.4375em;height:5.625em;transform:rotate(-45deg)}.swal2-icon.swal2-success [class^=swal2-success-line]{display:block;position:absolute;z-index:2;height:.3125em;border-radius:.125em;background-color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.8125em;width:1.5625em;transform:rotate(45deg)}.swal2-icon.swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;transform:rotate(-45deg)}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-tip{-webkit-animation:swal2-animate-success-line-tip .75s;animation:swal2-animate-success-line-tip .75s}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-long{-webkit-animation:swal2-animate-success-line-long .75s;animation:swal2-animate-success-line-long .75s}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-circular-line-right{-webkit-animation:swal2-rotate-success-circular-line 4.25s ease-in;animation:swal2-rotate-success-circular-line 4.25s ease-in}.swal2-progress-steps{flex-wrap:wrap;align-items:center;max-width:100%;margin:0 0 1.25em;padding:0;background:inherit;font-weight:600}.swal2-progress-steps li{display:inline-block;position:relative}.swal2-progress-steps .swal2-progress-step{z-index:20;flex-shrink:0;width:2em;height:2em;border-radius:2em;background:#2778c4;color:#fff;line-height:2em;text-align:center}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:#2778c4}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step{background:#add8e6;color:#fff}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line{background:#add8e6}.swal2-progress-steps .swal2-progress-step-line{z-index:10;flex-shrink:0;width:2.5em;height:.4em;margin:0 -1px;background:#2778c4}[class^=swal2]{-webkit-tap-highlight-color:transparent}.swal2-show{-webkit-animation:swal2-show .3s;animation:swal2-show .3s}.swal2-hide{-webkit-animation:swal2-hide .15s forwards;animation:swal2-hide .15s forwards}.swal2-noanimation{transition:none}.swal2-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}.swal2-rtl .swal2-close{right:auto;left:0}.swal2-rtl .swal2-timer-progress-bar{right:0;left:auto}@supports (-ms-accelerator:true){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@-webkit-keyframes swal2-toast-show{0%{transform:translateY(-.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0)}}@keyframes swal2-toast-show{0%{transform:translateY(-.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0)}}@-webkit-keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@-webkit-keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@-webkit-keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@-webkit-keyframes swal2-show{0%{transform:scale(.7)}45%{transform:scale(1.05)}80%{transform:scale(.95)}100%{transform:scale(1)}}@keyframes swal2-show{0%{transform:scale(.7)}45%{transform:scale(1.05)}80%{transform:scale(.95)}100%{transform:scale(1)}}@-webkit-keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(.5);opacity:0}}@keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(.5);opacity:0}}@-webkit-keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@-webkit-keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@-webkit-keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}
+@keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@-webkit-keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(.4);opacity:0}50%{margin-top:1.625em;transform:scale(.4);opacity:0}80%{margin-top:-.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(.4);opacity:0}50%{margin-top:1.625em;transform:scale(.4);opacity:0}80%{margin-top:-.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@-webkit-keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0);opacity:1}}@keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0);opacity:1}}@-webkit-keyframes swal2-rotate-loading{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes swal2-rotate-loading{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow:hidden}body.swal2-height-auto{height:auto!important}body.swal2-no-backdrop .swal2-container{top:auto;right:auto;bottom:auto;left:auto;max-width:calc(100% - .625em * 2);background-color:transparent!important}body.swal2-no-backdrop .swal2-container>.swal2-modal{box-shadow:0 0 10px rgba(0,0,0,.4)}body.swal2-no-backdrop .swal2-container.swal2-top{top:0;left:50%;transform:translateX(-50%)}body.swal2-no-backdrop .swal2-container.swal2-top-left,body.swal2-no-backdrop .swal2-container.swal2-top-start{top:0;left:0}body.swal2-no-backdrop .swal2-container.swal2-top-end,body.swal2-no-backdrop .swal2-container.swal2-top-right{top:0;right:0}body.swal2-no-backdrop .swal2-container.swal2-center{top:50%;left:50%;transform:translate(-50%,-50%)}body.swal2-no-backdrop .swal2-container.swal2-center-left,body.swal2-no-backdrop .swal2-container.swal2-center-start{top:50%;left:0;transform:translateY(-50%)}body.swal2-no-backdrop .swal2-container.swal2-center-end,body.swal2-no-backdrop .swal2-container.swal2-center-right{top:50%;right:0;transform:translateY(-50%)}body.swal2-no-backdrop .swal2-container.swal2-bottom{bottom:0;left:50%;transform:translateX(-50%)}body.swal2-no-backdrop .swal2-container.swal2-bottom-left,body.swal2-no-backdrop .swal2-container.swal2-bottom-start{bottom:0;left:0}body.swal2-no-backdrop .swal2-container.swal2-bottom-end,body.swal2-no-backdrop .swal2-container.swal2-bottom-right{right:0;bottom:0}@media print{body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow-y:scroll!important}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container{position:static!important}}body.swal2-toast-shown .swal2-container{background-color:transparent}body.swal2-toast-shown .swal2-container.swal2-top{top:0;right:auto;bottom:auto;left:50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{top:0;right:0;bottom:auto;left:auto}body.swal2-toast-shown .swal2-container.swal2-top-left,body.swal2-toast-shown .swal2-container.swal2-top-start{top:0;right:auto;bottom:auto;left:0}body.swal2-toast-shown .swal2-container.swal2-center-left,body.swal2-toast-shown .swal2-container.swal2-center-start{top:50%;right:auto;bottom:auto;left:0;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{top:50%;right:auto;bottom:auto;left:50%;transform:translate(-50%,-50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{top:50%;right:0;bottom:auto;left:auto;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-left,body.swal2-toast-shown .swal2-container.swal2-bottom-start{top:auto;right:auto;bottom:0;left:0}body.swal2-toast-shown .swal2-container.swal2-bottom{top:auto;right:auto;bottom:0;left:50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{top:auto;right:0;bottom:0;left:auto}body.swal2-toast-column .swal2-toast{flex-direction:column;align-items:stretch}body.swal2-toast-column .swal2-toast .swal2-actions{flex:1;align-self:stretch;height:2.2em;margin-top:.3125em}body.swal2-toast-column .swal2-toast .swal2-loading{justify-content:center}body.swal2-toast-column .swal2-toast .swal2-input{height:2em;margin:.3125em auto;font-size:1em}body.swal2-toast-column .swal2-toast .swal2-validation-message{font-size:1em}</style></head>
+
+<body class="skin-dark animate">
+    <div class="loader" style="display:none;"></div>
+                    <div class="registration-main">
+            <div class="header-main navbar navbar-expand-md navbar-light bg-light row">
+                <div class="col-sm-4"> <a href="https://www.education.gov.in/" target="_blank"><img class="dept-higher-edu-logo img-fluid" src="https://jeemain.ntaonline.in/frontend/web/images/education-logo.jpg" alt=""></a> </div>
+                <div class="col-sm-4 text-center custom-text-logo"> संयुक्त प्रवेश परीक्षा (मुख्य) <br> Joint Entrance Examination (Main) <br>JEE (Main) – 2024 </div>
+                <div class="col-sm-4 text-end"> <a href="https://www.nta.ac.in/" target="_blank"><img class="nta-logo img-fluid" src="https://jeemain.ntaonline.in/frontend/web/images/nta-logo-new.png" alt=""></a> </div>
+            </div>
+
+            <nav class="navbar navbar-expand-sm navbar-dark topnavigation">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"> <span class="navbar-toggler-icon"></span> </button>
+                    <div class="collapse navbar-collapse" id="mynavbar">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"> <a class="nav-link " href="/frontend/web/Scorecard/../site/login"><i class="ri-home-8-line"></i> Home</a> </li>
+                            <div class="dropdown">
+                                <a class="dropdown-toggle nav-link" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+                                    Information Bulletin
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="https://jeemain.nta.ac.in/images/information-bulletin-for-jee-main-2024.pdf" target="_blank">Information Bulletin </a></li>
+                                </ul>
+                            </div>
+                            <li class="nav-item">
+                                <a class="nav-link userActivityBtn" href="/frontend/web/contactus/index"><i class="ri-question-answer-line"></i> Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="content-body">
+            
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Score Card List</title>
+    <style>
+        .qr-code {
+            height: 119px;
+            width: 133px;
+        }
+
+        /*this css work on print page default date time and page title print on page */
+        /*@page { size: auto;  margin: 5mm 5mm; }*/
+        /*End of this css work on print page default date time and page title print on page */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 22px;
+            color: #000;
+        }
+
+        .logo {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .logo_name {
+            float: left;
+            margin-top: 13px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        table tr td {
+            padding: 2px 5px 5px 10px;
+            border: 1px solid;
+        }
+
+        .centerContent {
+            text-align: center;
+        }
+
+        /* this css work on page break to nest page */
+        /*        @media print {
+            table {
+                page-break-inside: auto
+            }
+
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto
+            }
+        }*/
+        /*        .note{
+            margin: 0 0 0 5%;
+            float: left;
+        }
+        .imp-point{
+            margin-bottom: 5%;
+        }
+        .imp-point p{
+            float: left;
+            font-size: 12px !important;
+            margin: 0 0 0 5% !important;
+        }*/
+        @media print {
+            table tr td {
+                padding: 1px 2px 2px 10px;
+                border: 1px solid;
+            }
+
+            .footer,
+            .header-main,
+            .topnavigation {
+                display: none
+            }
+
+            #printPageButton {
+                display: none;
+            }
+
+            body {
+                font-size: 12px;
+                display: flex;
+                table-layout: fixed;
+                padding-top: 0;
+                padding-bottom: 0;
+                height: auto;
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            p {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            marquee {
+                display: none;
+            }
+
+            .content-body {
+                padding: 0px !important;
+            }
+
+            /*            body {
+                margin: 0;
+                padding: 0;
+            }*/
+            /*            table { page-break-inside: auto }
+            tr    { page-break-inside: avoid; page-break-after: auto; }
+            thead { display: table-header-group; }
+            tfoot { display: table-footer-group; }
+            
+            @page {
+                size: A4;  DIN A4 standard, Europe 
+                margin: -110mm 16mm 27mm 16mm; 
+              }*/
+        }
+
+        .tablefooter {
+             border-top: 0px;
+             padding: 20px;
+        }
+
+        #sign_margin{
+            margin-top: 3px;
+        }
+        /*        #qrcode img{
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            width: 100%;
+            padding: 0.25rem;
+        }*/
+        /* End of this css work on page break to nest page */
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Libre Barcode 128 Text" rel="stylesheet">
+
+
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody><tr>
+            <th align="left" scope="col"><img src="https://jeemain.ntaonline.in/frontend/web/images/education-logo.jpg"></th>
+            <th align="center" scope="col" style="font-size:14px;text-align: center;">
+                <!-- <img src="/images/icon.png" style="width: 265px; margin-left: 165px;"> -->
+            </th>
+            <th align="right" scope="col" style="font-size:14px;text-align: right;">
+                <img src="https://jeemain.ntaonline.in/frontend/web/images/nta-logo-new.webp" width="212" height="46">
+            </th>
+        </tr>
+    </tbody></table>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody><tr>
+            <th align="center" scope="col" style="font-size:14px;text-align: center;">
+            <strong style="font-size:15px;color: blue;">JOINT ENTRANCE EXAMINATION (MAIN) – 2024 SESSION 1 (JANUARY 2024)</strong>
+            </th>
+        </tr>
+        <tr>
+            <th align="center" scope="col" style="font-size:14px;text-align: center;">
+                <strong style="font-size:15px;">NTA SCORE</strong>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <input type="button" id="printPageButton" value="Print" style="float: right;">
+
+                <input type="button" style="display: none;" id="print-btn-show" value="" onclick="window.print()">
+
+                <!-- <button style="float: right; margin: 7px;" class="remove-print no-print btn btn-sm btn-success pull-right"
+            id="print-btn" title="Click to Print">Print</button>
+
+        <button onclick="window.print()" style="display:none"
+            class="remove-print no-print btn btn-sm btn-success pull-right removeMargin"
+            id="print-btn-show">Print</button> -->
+
+
+            </th>
+        </tr>
+    </tbody></table>
+    <table width="100%" border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse; border-color: #000;">
+        <tbody><tr>
+            <td width="20%" align="left" scope="row"><strong>Application Number:</strong></td>
+            <td width="18%">240310529082</td>
+            <td width="25%"><strong>Roll No. (Session 1): </strong></td>
+            <td width="17%">BR07007700</td>
+
+            <td rowspan="6" align="center" width="18%" style="border-bottom-style: hidden;">
+            <span id="barcode">
+                                   <img src="https://jeemain.ntaonline.in/frontend/web/qrcode/generate-qr-code?data=%23F%F9%B8%AD%7F%0D%D9%11%3E%ADb%FCu%EF%B153f10fb74491fdd35df69d51cf30cd3bd376a6210d68fa82b216267daa12a80a%96%E1%B4%24C%03+%ED%ED%CB%A6%0E%27%B9T%E6%60v%03%CDC%96%DF%11%DF%24%E6%2A%3F%8C%3D%88%A0%11%D1%FF%28%9Bi%E1%114%25%F3%0A%8F0%B2%A7%EF%00%C1%B4%F5%10%A9%02%281%A4Y%86T%3B%FC%E3%AF%7E%C3%E9%CF%D6%8B%7C%BC%99%CB%E4%EC%ED41mw%1E%E8%40%AA%CF%8A%A2%D5%7Fp%C5%DFS%CE%D0%F7%BAa.x%F4%F5%C7%2B%C6%E21x%F1%7E%CD3%0B%80%13O%8E%B9%3A%DDU%7C%FA%B0%A7%26%83%9B%07EJ%BF%DB%18%EE%E1g%8D+%E5%E0%26%97%C1E%B9%94%E8%2F%18%F5%88%B8%CA%BDE" class="qr-code img-thumbnail img-responsive">
+            </span>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" scope="row"><strong>Candidate's Name:</strong></td>
+            <td colspan="3">SHIVAM KUMAR</td>
+        </tr>
+        <tr>
+            <td align="left" scope="row"><strong>Mother's Name:</strong></td>
+            <td colspan="3">LATE MUNNI DEVI</td>
+        </tr>
+        <tr>
+            <td align="left" scope="row" style="border-bottom-style: hidden;"><strong>Father's Name:</strong></td>
+            <td colspan="3" style="border-bottom-style: hidden;">LATE SAMRANJAY KUMAR</td>
+        </tr>
+    </tbody></table>
+
+    <table width="100%" border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse; border-color: #000;">
+        <tbody><tr>
+            <td width="20%" align="left" scope="row"><strong>Category:</strong></td>
+            <td width="18%">General</td>
+            <td width="25%"><strong>Person with Disability (PwD):</strong></td>
+            <td width="17%">
+            No            </td>
+
+            <td rowspan="6" align="center" width="18%">
+            <img src="https://jeeftp.ntaonline.in/frontend/web/uploads/240310529082/D0001_1700229465.jpeg" width="112" height="115">
+            <br>
+            <img src="https://jeeftp.ntaonline.in/frontend/web/uploads/240310529082/D0002_1700149040.jpg" width="112" height="60" id="sign_margin">
+            </td>
+        </tr>
+        <tr>
+            <td align="left" scope="row"><strong>Gender:</strong></td>
+            <td>Male</td>
+
+            <td align="left" scope="row"><strong>Date of Birth:</strong></td>
+            <td>20-03-2005</td>
+        </tr>
+
+        <tr>
+            <td align="left" scope="row"><strong>State of Eligibility:</strong></td>
+            <td>BIHAR</td>
+
+            <td align="left" scope="row"><strong>Nationality:</strong></td>
+            <td>INDIAN</td>
+        </tr>
+    </tbody></table>
+
+    <!--code for subject-->
+
+    <table width="100%" border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse; border-color: #000;">
+        <tbody><tr>
+            <td colspan="2" align="center" scope="row"><strong>Paper 1 (B.E./B Tech.)</strong></td>
+        </tr>
+        <tr>
+            <td width="20%" align="left" scope="row"><strong>Subject</strong></td>
+            <td width="80%" align="center"><strong>NTA Score</strong></td>
+        </tr>
+
+        
+        <tr>
+            <td align="left" scope="row"><strong>Physics</strong></td>
+            <td>98.5353689</td>
+        </tr>
+        <tr>
+            <td align="left" scope="row"><strong>Chemistry</strong></td>
+            <td>90.7706093</td>
+        </tr>
+        <tr>
+            <td align="left" scope="row"><strong>Mathematics</strong></td>
+            <td>88.6837087</td>
+        </tr>
+        <tr>
+            <td align="left" scope="row"><strong>Total (in figures)</strong></td>
+            <td>90.9266247</td>
+        </tr>
+        <tr>
+            <td align="left" scope="row"><strong>NTA Score in Words (in English)</strong></td>
+            <td>Ninety point Nine Two Six Six Two Four Seven Only</td>
+        </tr>
+        <tr>
+            <td align="left" scope="row"><strong>Remarks</strong></td>
+            <td>NA</td>
+        </tr>   
+
+        
+    </tbody></table>
+
+    <table width="100%">
+        <tbody><tr>
+            <td width="50%" align="left" scope="row" class="tablefooter"><strong>Dated: 12-02-2024</strong></td>
+            <td width="50%" align="right" scope="row" class="tablefooter">  <img src="https://jeemain.ntaonline.in/frontend/web/images/SeniorDirectorSign.jpg"> <br> <strong>Senior Director (NTA) &nbsp;</strong></td>
+        </tr>
+    </tbody></table>
+
+     <!--code for subject-->
+     <br>
+    <br>
+    <div class="imp-point">
+        <p><b>NTA Scores are normalized scores across multi-session papers and are based on the relative performance of all those who appeared for the examination in one session. The marks obtained are converted into a scale ranging from 100 to 0 for each session.</b>
+        </p>
+        <p class="note"><b style="color:red;text-decoration: underline;">Note:</b></p>
+        <ol start="1" style="padding-left: 1rem!important;">
+            <li>The NTA score is not the same as the percentage of marks obtained.</li>
+            <li>The NTA Score indicates the percentage of candidates who have scored <b>EQUAL TO OR BELOW</b> (same or lower raw scores) a particular candidate in that session.</li>
+            <li>The NTA scores of a Candidate have been calculated as follows:<br>
+                <b>(100* Number of candidates appeared in the “session” with raw score EQUAL TO OR LESS than the candidate) ÷ (Total number of candidates appeared in the “session”).</b>
+            </li>
+            <li>The NTA Score of the Total is <b>NOT</b> an aggregate or average of the NTA Score of an individual subject.</li>
+            <li>The candidate’s particulars including Category and Person with Disability (PwD) have been indicated as mentioned by the candidate in the online Application Form.</li>
+            <li><b>After the JEE (MAIN) - 2024 Session 2, the ranks of the candidates will be released taking into consideration the best of the two NTA Scores.</b></li>
+            <li>RL means ‘Result Later’.</li>
+            <li>This electronically generated Score Card is the official Score Card published by the NTA.</li>
+            <li>The National Testing Agency has taken due care while uploading the Score Card. However, in case of any inadvertent error, the NTA reserves the right to rectify the same at a later stage.</li>
+        </ol>
+    </div>
+    <br><br>
+
+    <script>
+        $(document).ready(function() {
+            $("#printPageButton").click(function() {
+
+                var barcodeValue = document.getElementById("barcode").innerHTML;
+                if (barcodeValue.trim() === "") {
+                    alert("Application Number Barcode Section is blank!, Please regenerate your Score Card.");
+                    window.location.href = "";
+                    return;
+                }
+                $("#print-btn-show").click();
+
+            });
+            //cntrl + p disable
+            $(document).keydown(function(event) {
+                if (event.ctrlKey == true && (event.which == '80')) { 
+
+                    var barcodeValue = document.getElementById("barcode").innerHTML;
+                    if (barcodeValue.trim() === "") {
+                        alert("Application Number Barcode Section is blank!, Please regenerate your Score Card.");
+                        event.preventDefault();
+                        window.location.href = "";
+                        return;
+                    }
+                    $("#print-btn-show").click();
+                    event.preventDefault();
+                }
+            });
+
+        });
+        </script>
+
+
+
+
+        </div>
+        <!-- content-body -->
+        
+    
+    <div class="footer row">
+        <div class="col-md-6">
+        </div>
+        <div class="col-md-6 text-end">
+            <a href="#"><img class="nta-logo img-fluid" src="https://jeemain.ntaonline.in/frontend/web/images/nta-logo-new.webp" alt=""></a>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            const channel = new BroadcastChannel('tab');
+            channel.postMessage('another-tab');
+            channel.addEventListener('message', (msg) => {
+                if (msg.data === 'another-tab') {
+                    // message received from 2nd tab
+                    alert('Cannot open multiple instances.You are logged out!');
+                    $.ajax({
+                        type: "post",
+                        url: '/frontend/web/site/logout',
+                        data: {},
+                        cache: false,
+                        success: function(data) {
+
+                        }
+                    });
+                    window.location.href = "/frontend/web/site/login";
+                }
+            });
+        });
+
+        //		document.onkeydown = function(e) {
+        //		  if(event.keyCode == 123) {
+        //			 return false;
+        //		  }
+        //		  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+        //			 return false;
+        //		  }
+        //		  if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+        //			 return false;
+        //		  }
+        //		  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+        //			 return false;
+        //		  }
+        //		  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+        //			 return false;
+        //		  }
+        //		}
+
+        //		document.addEventListener('contextmenu', function(e){
+        //		e.preventDefault();
+        //		});
+		
+		 document.onkeydown = function(e) {
+  if(event.keyCode == 123) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+     return false;
+  }
+}
+ 
+document.addEventListener('contextmenu', function(e){
+e.preventDefault();
+});
+ 
+    </script>
+    <script src="/frontend/web/assets/254c586e/jquery.js"></script>
+<script src="/frontend/web/assets/37da6068/yii.js"></script>
+<script src="/frontend/web/js/demo.js"></script>
+<script src="/frontend/web/js/jquery.smartWizard.min.js"></script>
+<script src="/frontend/web/js/jquery.image-popup.js"></script>
+<script src="/frontend/web/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/frontend/web/lib/feathericons/feather.min.js"></script>
+<script src="/frontend/web/lib/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="/frontend/web/js/script.js"></script>
+<script src="/frontend/web/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/frontend/web/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="/frontend/web/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="/frontend/web/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="/frontend/web/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="/frontend/web/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="/frontend/web/js/comman.js"></script>
+<script src="/frontend/web/js/bootstrap.bundle.min.js"></script>
+<script src="/frontend/web/js/jquery.multiselect.js"></script>
+<script src="/frontend/web/js/sweetalert2.all.min.js"></script>
+<script>jQuery(function ($) {
+
+        $(document).ready(function () {
+            $("#refresh_captcha").click(function (event) {
+                event.preventDefault();
+                $(this).parent().children('img').click();
+                $("#candidate-verifycode").val("");
+                $("#candidate-verifycode").removeClass("is-valid")
+            })
+        });
+
+        $(document).ready(function (){
+            $(".form-control").addClass("form-control-sm");
+            $("#refresh_captcha").click();
+        });
+
+        $(document).ready(function () {
+            $(".userActivityBtn").click(function (event) {
+                console.log("test-main.php");
+                //event.preventDefault()
+              var currentURL   = $(location).attr("href");
+                $.ajax({
+                  url: "/frontend/web/useracitivity/useract" ,
+                  type: "post",
+                  data: {
+                        moduleName: $(this).attr("data-modulename"),  
+                        activityName: $(this).attr("data-activityname"), 
+                        url: currentURL,  
+                        _csrf : "<?=Yii::$app->request->getCsrfToken()?>"
+                      },
+                  success: function (data) {
+                     console.log(data);
+                  }
+              });
+            })
+          });
+
+      
+});</script>
+    
+
+
+</body></html>
